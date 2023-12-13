@@ -1,22 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
+import TextField from "../../TextField/TextField";
 
 const CreatePostForm = ({ onNewPost }) => {
-  const [post, setPost] = useState("");
+  const [username, setUsername] = useState("");
+  const [body, setBody] = useState("");
+
+  const handleUsernameChange = (e) => {
+    setUsername(e.target.value);
+  };
+  const handleBodyChange = (e) => {
+    setBody(e.target.value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formData = { post };
+    const formData = { username, body };
     onNewPost(formData);
+    setUsername("");
+    setBody("");
   };
-  return(<div>PostForm</div>)
-  onNewPost(formData);
+
+  return (
+    <form onSubmit={handleSubmit} className="flex item">
+      <h4>Add Post</h4>
+      <TextField label="Username" value={username} onChange={handleUsernameChange} />
+      <TextField label="Say Something" value={body} onChange={handleBodyChange} />
+      <button type="submit">Post!</button>
+    </form>
+  );
 };
-
-return ( <form onSubmit={handleSubmit} className="flex item">
-<h4>Add Movie</h4>
-<TextField label="Username:" value={username} onChange={setUsername}/>
-<TextField label="Say Something:" value={body} onChange={setBody}/>
-<button type="submit">Post!</button>
-</form> );
-
 export default CreatePostForm;

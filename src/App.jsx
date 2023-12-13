@@ -6,11 +6,14 @@ import React, { useState } from 'react';
 
 
 function App() {
+  const [posts, setPosts] = useState([]);
+  const [activeIndex, setActiveIndex] = useState(-1);
 
   const handleNewPost = (newPost) => {
     const updatedPosts = [...posts, newPost];
     setPosts(updatedPosts);
   }
+
 
   return (
     <div className="App">
