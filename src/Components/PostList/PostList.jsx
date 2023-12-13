@@ -4,7 +4,7 @@ const PostList = ({posts = [], activeIndex, setActiveIndex}) => {
   const postItems = posts.map((post, i) => (
   <PostItem
   key={i}
-  body={post}
+  post={post}
   activeIndex={activeIndex}
   setActiveIndex={setActiveIndex}
   index={i}
