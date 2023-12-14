@@ -1,8 +1,18 @@
 .likeBtnClass {
     background-color: greenyellow;
+    display: inline-block;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    margin: 10px;
 }
 
 .dislikeBtnClass {
     background-color: red;
+    display: inline-block;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    margin: 10px;
 }
 
