@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./PostItem.css";
 
 const PostItem = ({
   post,
@@ -31,10 +32,10 @@ const PostItem = ({
         <h3>{post.username}</h3>
       </span>
       <span>{post.body}</span>
-      <button className={likeBtnClass} onClick={handleLike}>
+      <button className={`likeBtnClass ${likeBtnClass}`} onClick={handleLike}>
         Like
       </button>
-      <button className={dislikeBtnClass} onClick={handleDislike}>
+      <button className={`dislikeBtnClass ${dislikeBtnClass}`} onClick={handleDislike}>
         Dislike
       </button>
     </div>
